@@ -1,4 +1,41 @@
-## unreleased ##
+*   Fix regression when using `ActionView::Helpers::TranslationHelper#translate` with
+    `options[:raise]`.
+
+    This regression was introduced at ec16ba75a5493b9da972eea08bae630eba35b62f.
+
+    *Shota Fukumori (sora_h)*
+
+## Rails 3.2.16 ##
+
+*   Deep Munge the parameters for GET and POST Fixes CVE-2013-6417
+
+*   Stop using i18n's built in HTML error handling.  Fixes: CVE-2013-4491
+
+*   Escape the unit value provided to number_to_currency Fixes CVE-2013-6415
+
+*   Only use valid mime type symbols as cache keys CVE-2013-6414
+
+## Rails 3.2.15 (Oct 16, 2013) ##
+
+*   Fix `ActionDispatch::RemoteIp::GetIp#calculate_ip` to only check for spoofing
+    attacks if both `HTTP_CLIENT_IP` and `HTTP_X_FORWARDED_FOR` are set.
+
+    Fixes #12410
+    Backports #10844
+
+    *Tamir Duberstein*
+
+*   Fix the assert_recognizes test method so that it works when there are
+    constraints on the querystring.
+
+    Issue/Pull Request #9368
+    Backport #5219
+
+    *Brian Hahn*
+
+*   Fix to render partial by context(#11605).
+
+    *Kassio Borges*
 
 *   Fix `ActionDispatch::Assertions::ResponseAssertions#assert_redirected_to`
     does not show user-supplied message.
